@@ -1,5 +1,6 @@
 package com.social.media.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class SocialGroup {
 
 
     @ManyToMany(mappedBy = "groups")//SocialUser class is owner of this Many to many  Relationship
+    @JsonIgnore
     private Set<SocialUser> socialUsers = new HashSet<>();
 
     @Override

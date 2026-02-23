@@ -25,7 +25,7 @@ public class SocialUser {
     @OneToMany(mappedBy = "socialUser",cascade = CascadeType.ALL)
     private List<Post> post = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_group",
             joinColumns = @JoinColumn(name = "user_id"),
